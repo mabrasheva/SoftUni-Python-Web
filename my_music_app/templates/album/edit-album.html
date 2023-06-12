@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+    <!--Edit Page-->
+    <section class="editPage">
+        <form method="post" action="{% url 'album edit' pk=album.pk %}">
+            <fieldset>
+                <legend>Edit Album</legend>
+                <div class="container">
+                    <!-- Form for Editing Album -->
+                    {{ form }}
+                    <!-- Button for Editing Album -->
+                    <button class="edit-album" type="submit">Edit Album</button>
+                    {% csrf_token %}
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+{% endblock %}
