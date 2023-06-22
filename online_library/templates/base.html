@@ -1,0 +1,36 @@
+{% load static %}
+{% load get_profile %}
+{% load get_books %}
+{% get_user_profile as profile %}
+{% get_all_books as books %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static 'images/library.jpg' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Online Books Library</title>
+</head>
+
+<body>
+<div id="container">
+    <header id="site-header">
+
+        <!-- Navigation -->
+        {% include 'common/navigation.html' %}
+
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>Python Web Basics Retake Exam @SoftUni</p>
+    </footer>
+</div>
+</body>
+
+</html>
